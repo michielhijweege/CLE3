@@ -1,3 +1,20 @@
+body{
+    margin: 0px;
+}
+
+a{
+    color: #0099AE;
+    text-decoration: none;
+}
+
+ul{
+    padding: 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
 #menu{
     background: #0099AE;
     display: flex;
@@ -27,4 +44,65 @@
     text-decoration: none;
     font-size: 30px;
     margin: 10px;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-box{
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.logo-pretpark{
+    width: 25vw;
+}
+
+.lees-meer{
+    background: #ff0000;
+    color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    padding: 1vw;
+}
+
+.save{
+    text-indent: -9999px;
+    white-space: nowrap;
+    line-height: 12px;
+    font-size: 8pt;
+    margin-right: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    height: 8vh;
+    width: 4vw;
+}
+
+.saved{
+    background: url("../img/bookmark-full.png") no-repeat;
+    background-size: contain;
+}
+
+.notsaved{
+    background: url("../img/bookmark-empty.png") no-repeat;
+    background-size: contain;
+}
+
+.saved:hover{;
+    background: url("../img/bookmark-empty.png") no-repeat;
+    background-size: contain;
+}
+
+.notsaved:hover{;
+    background: url("../img/bookmark-full.png") no-repeat;
+    background-size: contain;
 }
