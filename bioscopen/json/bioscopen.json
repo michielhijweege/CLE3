@@ -1,0 +1,28 @@
+{
+  "bioscopen": [
+    {
+      "id": 0,
+      "name": "LingeFilm",
+      "img": "",
+      "imgalt": "Logo LingeFilm"
+    },
+    {
+      "id": 1,
+      "name": "DOK6 Cinema",
+      "img": 1,
+      "imgalt": "Logo DOK6 Cinema"
+    },
+    {
+      "id": 2,
+      "name": "Dedicon",
+      "img": 1,
+      "imgalt": "Logo Dedicon"
+    },
+    {
+      "id": 3,
+      "name": "Pathé",
+      "img": 1,
+      "imgalt": "Logo Pathé"
+    }
+  ]
+}
