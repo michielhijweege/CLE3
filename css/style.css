@@ -1,84 +1,90 @@
 body{
-    margin: 0px;
+    margin:  0px;
 }
 
 a{
-    color: #0099AE;
-    text-decoration: none;
+    color:  #0099AE;
+    text-decoration:  none;
 }
 
 ul{
-    padding: 0px;
+    padding:  0px;
 }
 
 li{
-    list-style-type: none;
+    list-style-type:  none;
 }
 
 #menu{
-    background: #0099AE;
-    display: flex;
-    justify-content: space-evenly;
+    background:  #0099AE;
+    display:  flex;
+    justify-content:  space-evenly;
 }
 
 #menu #logo{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 30px;
-    margin: 10px;
+    color:  #FFFFFF;
+    text-decoration:  none;
+    font-size:  30px;
+    margin:  10px;
 }
 
 #menu #buttons{
-    margin: 10px;
+    margin:  10px;
 }
 
 #menu .button{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 30px;
-    margin: 10px;
+    color:  #FFFFFF;
+    text-decoration:  none;
+    font-size:  30px;
+    margin:  10px;
 }
 
 #menu #active{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 30px;
-    margin: 10px;
+    color:  #FFFFFF;
+    text-decoration:  none;
+    font-size:  30px;
+    margin:  10px;
 }
 
 #content{
-    display: flex;
-    flex-direction: column;
+    display:  flex;
+    flex-direction:  column;
 }
 
 .content-box{
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px gray;
-    padding: 20px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    position: relative;
+    border-radius:  5px;
+    box-shadow:  2px 2px 5px gray;
+    padding:  20px;
+    margin:  10px;
+    display:  flex;
+    justify-content:  space-around;
+    position:  relative;
 }
 
 .logo-pretpark{
-    width: 25vw;
+    width:  25vw;
 }
 
-.lees-meer{
-    background: #ff0000;
-    color: #ffffff;
-    border: 0;
-    border-radius: 5px;
-    padding: 1vw;
+.lees{
+    background:  #ff0000;
+    color:  #ffffff;
+    border:  0;
+    border-radius:  5px;
+    padding:  1vw;
+    font-size: 20pt;
+    margin-right: 1vw;
+    position: absolute;
+    bottom: 1vh;
+    right: 0;
+}
+
+.lees:hover{
+     cursor: pointer;
 }
 
 .save{
-    text-indent: -9999px;
-    white-space: nowrap;
-    line-height: 12px;
-    font-size: 8pt;
-    margin-right: 2px;
+    text-indent:  -9999px;
+    margin-right: 1vw;
     position: absolute;
     top: 0;
     right: 0;
@@ -88,21 +94,68 @@ li{
 }
 
 .saved{
-    background: url("../img/bookmark-full.png") no-repeat;
-    background-size: contain;
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
 }
 
 .notsaved{
-    background: url("../img/bookmark-empty.png") no-repeat;
-    background-size: contain;
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
 }
 
-.saved:hover{;
-    background: url("../img/bookmark-empty.png") no-repeat;
-    background-size: contain;
+.saved:hover{
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
 }
 
-.notsaved:hover{;
-    background: url("../img/bookmark-full.png") no-repeat;
-    background-size: contain;
+.notsaved:hover{
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
+}
+
+.detailpageholder{
+    position: fixed;
+    top: 5vh;
+    left: 1vw;
+}
+
+.detailpage{
+    z-index: 1;
+    background: #ff0000;
+    color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    padding: 1vw;
+    width: 96vw;
+    height: 90vh;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#show{
+    display: block;
+}
+
+#hide{
+    display: none;
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+    color: #ffffff;
+}
+
+.close:hover{
+    cursor: pointer;
 }

@@ -8,7 +8,7 @@
     <title>Dag je uit met mensen met een visuele beperking</title>
     <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body class="scroll">
     <div id="menu">
         <div id="logo"><a class="button" href="index.php">Caecus</a></div>
         <div id="buttons">
