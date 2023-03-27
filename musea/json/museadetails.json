@@ -1,0 +1,108 @@
+{
+  "museadetail": [
+    {
+      "id": 0,
+      "title": "Kunsthal Rotterdam",
+      "img": "img/kunsthal-rotterdam.jpeg",
+      "imgalt": "logo kunsthal rotterdam",
+      "linktext": "kunsthal.com",
+      "link": "https://www.kunsthal.com/nl",
+      "beoordeling": [
+        "2,5"
+      ],
+      "openingstijden": [
+        "<b>Maandag</b> Gesloten",
+        "<b>Dinsdag</b> Van 10:00 tot 17:00",
+        "<b>Woensdag</b> Van 10:00 tot 17:00",
+        "<b>Donderdag</b> Van 10:00 tot 17:00",
+        "<b>Vrijdag</b> Van 10:00 tot 17:00",
+        "<b>Zaterdag</b> Van 10:00 tot 17:00",
+        "<b>Zondag</b> Van 10:00 tot 17:00"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Rijksmuseum",
+      "img": "img/rijksmuseum.jpeg",
+      "imgalt": "logo rijksmuseum",
+      "linktext": "rijksmuseum.nl",
+      "link": "https://rijksmuseum.nl",
+      "beoordeling": [
+        "2,5"
+      ],
+      "openingstijden": [
+        "<b>Maandag</b> van 10:00 tot 18:00",
+        "<b>Dinsdag</b> van 10:00 tot 18:00",
+        "<b>Woensdag</b> van 10:00 tot 18:00",
+        "<b>Donderdag</b> van 10:00 tot 18:00",
+        "<b>Vrijdag</b> van 10:00 tot 18:00",
+        "<b>Zaterdag</b> van 10:00 tot 18:00",
+        "<b>Zondag</b> van 10:00 tot 18:00"
+      ],
+      "honden": "Toegankelijkheid met een hulp- of geleidehond\nBlindengeleidehonden en honden van mensen met een lichamelijke of geestelijke beperking mogen betreden. Hulphonden moeten duidelijk herkenbaar zijn.",
+      "rolstoel": "Toegankelijkheid met een rolstoel\nVoor de grote attracties wacht je zoals iedereen in de virtuele wachtrij. De overige attracties kun je betreden via de uitgang.\nDe grote attracties zijn:\n•   Blast, Goliath, Lost Gravity, Speed of Sound, Xpress: Platform 13, El Rio Grande en Crazy River en Untamed;\nDe attractiemedewerker zal instructies geven hoe je de attractie kunt betreden."
+    },
+    {
+      "id": 2,
+      "title": "Maritiem Museum",
+      "img": "img/maritiem-museum.jpeg",
+      "imgalt": "logo maritiem museum",
+      "linktext": "toverland.com",
+      "link": "https://www.toverland.com/",
+      "beoordeling": [
+        "1. x",
+        "2. x",
+        "3. x",
+        "4. x",
+        "5. x",
+        "6. x",
+        "7. x",
+        "8. x",
+        "9. x",
+        "10. x"
+      ],
+      "openingstijden": [
+        "<b>Maandag</b> van 10:00 tot 18:00",
+        "<b>Dinsdag</b> van 10:00 tot 18:00",
+        "<b>Woensdag</b> van 10:00 tot 18:00",
+        "<b>Donderdag</b> van 10:00 tot 18:00",
+        "<b>Vrijdag</b> van 10:00 tot 18:00",
+        "<b>Zaterdag</b> van 10:00 tot 19:00",
+        "<b>Zondag</b> van 10:00 tot 19:00"
+      ],
+      "honden": "x",
+      "rolstoel": "x"
+    },
+    {
+      "id": 3,
+      "title": "Kunstmuseum Den Haag",
+      "img": "img/kunstmuseum-den-haag.jpeg",
+      "imgalt": "logo kunstmuseum den haag",
+      "linktext": "slagharen.com",
+      "link": "https://slagharen.com",
+      "beoordeling": [
+        "1. x",
+        "2. x",
+        "3. x",
+        "4. x",
+        "5. x",
+        "6. x",
+        "7. x",
+        "8. x",
+        "9. x",
+        "10. x"
+      ],
+      "openingstijden": [
+        "<b>Maandag</b> van 10:00 tot 17:00",
+        "<b>Dinsdag</b> van 10:00 tot 17:00",
+        "<b>Woensdag</b> van 10:00 tot 17:00",
+        "<b>Donderdag</b> van 10:00 tot 17:00",
+        "<b>Vrijdag</b> van 10:00 tot 17:00",
+        "<b>Zaterdag</b> van 10:00 tot 18:00",
+        "<b>Zondag</b> van 10:00 tot 18:00"
+      ],
+      "honden": "x",
+      "rolstoel": "x"
+    }
+  ]
+}
