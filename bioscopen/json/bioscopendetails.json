@@ -33,6 +33,30 @@
       "website": "https://www.lingefilm.nl/",
       "hulpmiddelen": "Earcatch",
       "openingstijden": [
+        "Maandag Middag: 14:30-16:30 Avond: 18:00(start laatste film)",
+        "Dinsdag Middag: Gesloten Avond: 19:00(start laatste film,45 minuten voor aanvang eerste film)",
+        "Zaterdagavond 20:30",
+        "Zondagdagavond 20:00"
+      ],
+
+      "toegankelijkheid": [
+        {
+          "beschrijving": "/",
+          "personeel": "Bij de bioscoop",
+          "honden": "/",
+          "bereikbaarheid": "/",
+          "meerInformatieLink": "https://lingefilm.nl/2019/03/03/blind-of-slechtziend-ook-jij-kan-naar-de-bioscoop/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "DOK6 Cinema",
+      "img": "",
+      "imgalt": "Logo LingeFilm",
+      "website": "https://www.lingefilm.nl/",
+      "hulpmiddelen": "Earcatch",
+      "openingstijden": [
         "Woensdagavond 20:00",
         "Vrijdagavond 20:30",
         "Zaterdagavond 20:30",
