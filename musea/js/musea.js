@@ -1,11 +1,11 @@
 window.addEventListener('load', init);
 
-const apiUrl = 'json/musea.json';
-const apidetailUrl = 'json/museadetails.json';
+const apiUrl = 'http://localhost/CLE3/musea';
 let section;
 let list;
 let saveitems = [];
 let detailpage;
+let museadetails = [];
 
 function init()
 {
@@ -19,14 +19,14 @@ function init()
             }
             return response.json()
         })
-        .then(parkenSuccesHandler)
+        .then(museaSuccesHandler)
         .catch(ajaxErrorHandler)
 
-    createdetailpagina()
+    createDetailPagina()
 }
 
 //create detail pagina
-function createdetailpagina(){
+function createDetailPagina(){
     const detailpageholder = document.createElement('section')
     detailpageholder.classList.add('detailpageholder')
     detailpage = document.createElement('section')
@@ -42,154 +42,147 @@ function createdetailpagina(){
     detailpage.appendChild(closebutton)
     detailpage.addEventListener('click', ItemWasClicked)
 }
-/*
+
 //create een section
-function parkenSuccesHandler(data){
-    console.log(data)
-    for (let i = 0; i < data.musea.length; i++){
+function museaSuccesHandler(data){
+    for (let musea of data) {
+        console.log(musea)
         const newmuseadiv = document.createElement('section')
         newmuseadiv.classList.add("content-box")
-        newmuseadiv.classList.add(data.musea[i].title)
-        newmuseadiv.id = data.musea[i].title
-
-        let img = document.createElement("img")
-        img.src = data.musea[i].img
-        img.classList.add("logo-musea")
-        newmuseadiv.appendChild(img)
-
-        let midcontent = document.createElement('section')
-        midcontent.classList.add('midcontent')
-
-        let h2 = document.createElement("h2")
-        h2.innerHTML = data.musea[i].title
-
-        newmuseadiv.appendChild(img)
-        newmuseadiv.appendChild(midcontent)
-        midcontent.appendChild(h2)
-
+        newmuseadiv.dataset.name = musea.name;
         list.appendChild(newmuseadiv)
+
+        fetch(apiUrl + '?id=' + musea.id)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then(detailSuccesHandler)
+            .catch(ajaxErrorHandler);
     }
-    fetch(apidetailUrl)
-        .then(response => {
-            if(!response.ok){
-                throw new Error(response.statusText)
-            }
-            return response.json()
-        })
-        .then(detailSuccesHandler)
-        .catch(ajaxErrorHandler)
 }
 
 //laad en zet de detail data
+function detailSuccesHandler(musea) {
+    console.log(musea)
+    let museaCard = document.querySelector(`.content-box[data-name='${musea.name}']`);
+//logo inladen
+    let logoimg = document.createElement("img")
+    logoimg.src = musea.img
+    logoimg.alt = musea.imgalt
+    logoimg.classList.add("logo-musea")
+    museaCard.appendChild(logoimg)
 
-function detailSuccesHandler(data){
-    for (let i = 0; i < data.museadetail.length; i++) {
-        let link = document.createElement("a")
-        link.innerHTML = data.museadetail[i].linktext
-        link.href = data.museadetail[i].link
-        link.setAttribute('target', '_blank');
+//create mid content
+    let midcontent = document.createElement('section')
+    midcontent.classList.add('midcontent')
+    museaCard.appendChild(midcontent)
 
-        let top5listh3 = document.createElement("h3")
-        top5listh3.innerHTML = 'Top atracties'
+//title inladen
+    let title = document.createElement('h2');
+    title.innerHTML = musea.name;
+    midcontent.appendChild(title);
 
-        let top5list = document.createElement("ul")
+//link inladen
+    let link = document.createElement("a")
+    link.innerHTML = musea.linktext
+    link.href = musea.link
+    link.setAttribute('target', '_blank');
+    midcontent.appendChild(link);
 
-        for (let t = 0; t < 5; t++) {
-            let top5listitem = document.createElement("li")
-            top5listitem.innerHTML = data.pretparkdetail[i].topatracties[t]
-            top5list.appendChild(top5listitem)
-        }
+//create right content
+    let rightcontent = document.createElement('section')
+    museaCard.appendChild(rightcontent)
 
-        let rightcontent = document.createElement('section')
+//top openings tijden title inladen
+    let openingstijdenh3 = document.createElement("h3")
+    openingstijdenh3.innerHTML = 'Openings tijden'
+    rightcontent.appendChild(openingstijdenh3);
 
-        let openingstijdenh3 = document.createElement("h3")
-        openingstijdenh3.innerHTML = 'Openings tijden'
+//top openings tijden list inladen
+    let openingstijdenlijst = document.createElement("ul")
+    rightcontent.appendChild(openingstijdenlijst);
 
-        let openingstijden = document.createElement("ul")
-
-        for (let t = 0; t < 7; t++) {
-            let openingstijd = document.createElement("li")
-            openingstijd.innerHTML = data.pretparkdetail[i].openingstijden[t]
-            openingstijden.appendChild(openingstijd)
-        }
-
-        let leesmeerbutton = document.createElement("button")
-        leesmeerbutton.innerHTML = 'Lees meer'
-        leesmeerbutton.classList.add("lees")
-        leesmeerbutton.classList.add(data.pretparkdetail[i].title)
-
-        let savenbutton = document.createElement("button")
-        savenbutton.innerHTML = 'save ' + data.pretparkdetail[i].title
-        savenbutton.id = data.pretparkdetail[i].title
-        savenbutton.classList.add("save")
-        savenbutton.classList.add("notsaved")
-
-        let newpretparkdiv = document.getElementById(data.pretparkdetail[i].title)
-        let midcontent = newpretparkdiv.getElementsByTagName('section')[0]
-
-        midcontent.appendChild(link)
-        midcontent.appendChild(top5listh3)
-        midcontent.appendChild(top5list)
-        newpretparkdiv.appendChild(rightcontent)
-        rightcontent.appendChild(openingstijdenh3)
-        rightcontent.appendChild(openingstijden)
-        rightcontent.appendChild(leesmeerbutton)
-        rightcontent.appendChild(savenbutton)
+//openings tijden inladen
+    for (let t = 0; t < 7; t++) {
+        let tijdenlistitem = document.createElement("li")
+        tijdenlistitem.innerHTML = musea.openingstijden[t]
+        openingstijdenlijst.appendChild(tijdenlistitem)
     }
-    loadSaves()
-}
-*/
 
+//creat lees button
+    let leesmeerbutton = document.createElement("button")
+    leesmeerbutton.innerHTML = 'Lees meer'
+    leesmeerbutton.classList.add("lees")
+    rightcontent.appendChild(leesmeerbutton)
+
+//creat save button
+    let savenbutton = document.createElement("button")
+    savenbutton.innerHTML = 'save ' + musea.name
+    savenbutton.id = musea.name
+    savenbutton.classList.add("save")
+    savenbutton.classList.add("notsaved")
+    rightcontent.appendChild(savenbutton)
+}
 //error code
 function ajaxErrorHandler(error){
     console.error(error)
 }
 
 //kijk of hij opgeslagen is en verander icon
-function loadSaves(){
-    if(localStorage.getItem("savelist")){
-        saveitems = JSON.parse( localStorage.getItem( "savelist" ) );
-        for (let i = 0; i < saveitems.length; i++){
+function loadSaves(name) {
+    if (localStorage.getItem("savelist-musea")) {
+        saveitems = JSON.parse(localStorage.getItem("savelist-musea"));
+        for (let i = 0; i < saveitems.length; i++) {
+
+            console.log(saveitems[i])
+
+            /*if()
+
             let name = saveitems[i].replace("save ", "")
             let parent = document.getElementById(name)
             let button = parent.getElementsByTagName('button')[1]
+
             button.classList.add("saved")
             button.classList.remove("notsaved")
             button.innerHTML = button.innerHTML.replace("save", "unsave");
+            }*/
         }
     }
 }
 
 //klik function
-function ItemWasClicked(e){
-    //save action
-    if(e.target.classList.item(0) === "save"){
-        if(e.target.classList.item(1) === "notsaved")
-        {
+function ItemWasClicked(e) {
+//save action
+    if (e.target.classList.item(0) === "save") {
+        if (e.target.classList.item(1) === "notsaved") {
             e.target.classList.add("saved")
             e.target.classList.remove("notsaved")
             console.log(e.target.innerHTML)
             saveitems.push(e.target.innerHTML)
             e.target.innerHTML = e.target.innerHTML.replace("save", "unsave");
-            localStorage.setItem("savelist", JSON.stringify(saveitems));
-        }
-        else if(e.target.classList.item(1) === "saved")
-        {
+            localStorage.setItem("savelist-musea", JSON.stringify(saveitems));
+        } else if (e.target.classList.item(1) === "saved") {
             e.target.classList.add("notsaved")
             e.target.classList.remove("saved")
             console.log(e.target.innerHTML)
             let remove = saveitems.indexOf(e.target.innerHTML.replace("unsave", "save"))
-            saveitems.splice(remove,1)
+            saveitems.splice(remove, 1)
             e.target.innerHTML = e.target.innerHTML.replace("unsave", "save");
-            localStorage.setItem("savelist", JSON.stringify(saveitems));
+            localStorage.setItem("savelist-musea", JSON.stringify(saveitems));
         }
     }
-    //lees function
-    if(e.target.classList.item(0) === "lees"){
-        if(detailpage.id === "hide"){
+
+//lees function
+    if (e.target.classList.item(0) === "lees") {
+        if (detailpage.id === "hide") {
             detailpage.id = "show"
             document.body.classList.add("noscroll")
-        } else if(detailpage.id === "show"){
+            console.log(e.target.dataset.id)
+            console.log(museadetails[e.target.dataset.id])
+        } else if (detailpage.id === "show") {
             detailpage.id = "hide"
             document.body.classList.remove("noscroll")
         }
