@@ -2,6 +2,12 @@
     width:  25vw;
 }
 
+.rating-icon{
+    width: 10vw;
+    height: 5vw;
+    object-fit: scale-down;
+}
+
 .lees{
     background:  #ff0000;
     color:  #ffffff;
