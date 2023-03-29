@@ -92,6 +92,18 @@ function detailSuccesHandler(musea) {
     link.setAttribute('target', '_blank');
     midcontent.appendChild(link);
 
+//rating inladen
+    let rating = document.createElement("h3")
+    rating.innerHTML = musea.rating + " / 5"
+    midcontent.appendChild(rating)
+
+//rating icon inladen
+    let ratingicon = document.createElement("img")
+    ratingicon.src = musea.ratingicon
+    ratingicon.alt = musea.ratingiconalt
+    ratingicon.classList.add("rating-icon")
+    midcontent.appendChild(ratingicon)
+
 //create right content
     let rightcontent = document.createElement('section')
     museaCard.appendChild(rightcontent)
