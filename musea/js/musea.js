@@ -72,12 +72,12 @@ function detailSuccesHandler(musea) {
     let logoimg = document.createElement("img")
     logoimg.src = musea.img
     logoimg.alt = musea.imgalt
-    logoimg.classList.add("logo-musea")
+    logoimg.classList.add("content-vak")
     museaCard.appendChild(logoimg)
 
 //create mid content
     let midcontent = document.createElement('section')
-    midcontent.classList.add('midcontent')
+    midcontent.classList.add('content-vak')
     museaCard.appendChild(midcontent)
 
 //title inladen
@@ -106,6 +106,7 @@ function detailSuccesHandler(musea) {
 
 //create right content
     let rightcontent = document.createElement('section')
+    rightcontent.classList.add('content-vak')
     museaCard.appendChild(rightcontent)
 
 //top openings tijden title inladen
@@ -114,13 +115,22 @@ function detailSuccesHandler(musea) {
     rightcontent.appendChild(openingstijdenh3);
 
 //top openings tijden list inladen
-    let openingstijdenlijst = document.createElement("ul")
+    let openingstijdenlijst = document.createElement("table")
     rightcontent.appendChild(openingstijdenlijst);
 
 //openings tijden inladen
     for (let t = 0; t < 7; t++) {
-        let tijdenlistitem = document.createElement("li")
-        tijdenlistitem.innerHTML = musea.openingstijden[t]
+        let tijdenlistitem = document.createElement("tr")
+
+        let dag = document.createElement("td")
+        dag.innerHTML = "<b>" + musea.openingsdagen[t] + "</b>"
+
+        let tijd = document.createElement("td")
+        tijd.innerHTML = musea.openingstijden[t]
+
+        tijdenlistitem.appendChild(dag)
+        tijdenlistitem.appendChild(tijd)
+
         openingstijdenlijst.appendChild(tijdenlistitem)
     }
 

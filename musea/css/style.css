@@ -102,3 +102,31 @@
 .close:hover{
     cursor: pointer;
 }
+
+.content-holder{
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+.content-vak{
+    float: left;
+    width: 33.33%;
+    margin-left: 2vw;
+}
+
+h2{
+    font-size: 2vw;
+}
+
+.content-box{
+    border-radius:  5px;
+    box-shadow:  2px 2px 5px gray;
+    padding:  20px;
+    margin:  10px;
+    display:  flex;
+    justify-content:  space-around;
+    position:  relative;
+}
