@@ -89,29 +89,32 @@ function detailSuccesHandler(bios) {
 
 //link inladen
     let link = document.createElement("a")
-    link.innerHTML = bios.linktekst
-    link.href = bios.link
+    link.innerHTML = bios.linktekst;
+    link.href = bios.link;
     link.setAttribute('target', '_blank');
     midcontent.appendChild(link);
 
 //create right content
     let rightcontent = document.createElement('section')
-    museaCard.appendChild(rightcontent)
+    biosCard.appendChild(rightcontent)
+
 
 //top openings tijden title inladen
     let openingstijdenh3 = document.createElement("h3")
-    openingstijdenh3.innerHTML = 'Openings tijden'
+    openingstijdenh3.innerHTML = 'openingstijden'
     rightcontent.appendChild(openingstijdenh3);
 
+/*
 //top openings tijden list inladen
     let openingstijdenlijst = document.createElement("ul")
     rightcontent.appendChild(openingstijden);
+ */
 
 //openings tijden inladen
     for (let t = 0; t < 7; t++) {
         let tijdenlistitem = document.createElement("li")
-        tijdenlistitem.innerHTML = musea.openingstijden[t]
-        openingstijdenlijst.appendChild(tijdenlistitem)
+        tijdenlistitem.innerHTML = bios.openingstijden[t]
+        rightcontent.appendChild(tijdenlistitem)
     }
 
 //creat lees button
