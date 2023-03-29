@@ -1,0 +1,27 @@
+{
+  "musea": [
+    {
+      "id": 0,
+      "name": "Kunsthal Rotterdam",
+      "img": "img/kunsthal-rotterdam.jpeg",
+      "imgalt": "logo kunsthal"
+    },
+    {
+      "id": 1,
+      "name": "Rijksmuseum",
+      "img": "img/rijksmuseum.jpeg",
+      "imgalt": "logo rijksmuseum"
+    },
+    {
+      "id": 2,
+      "name": "Maritiem Museum",
+      "img": "img/maritiem-museum.jpeg",
+      "imgalt": "logo maritiem museum"
+    },
+    {
+      "id": 3,
+      "name": "Kunstmuseum Den Haag",
+      "img": "img/kunstmuseum-den-haag.jpeg",
+      "imgalt": "logo kunstmuseum den haag"}
+  ]
+}
