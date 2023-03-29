@@ -1,0 +1,100 @@
+.logo-bios{
+    width:  25vw;
+    height: 20vw;
+    object-fit: scale-down;
+}
+
+.lees{
+    background:  #ff0000;
+    color:  #ffffff;
+    border:  0;
+    border-radius:  5px;
+    padding:  1vw;
+    font-size: 20pt;
+    margin-right: 1vw;
+    position: absolute;
+    bottom: 1vh;
+    right: 0;
+}
+
+.lees:hover{
+    cursor: pointer;
+}
+
+.save{
+    text-indent:  -9999px;
+    margin-right: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    height: 8vh;
+    width: 4vw;
+}
+/*
+.saved{
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
+}
+
+.notsaved{
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
+}
+
+.saved:hover{
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
+}
+
+.notsaved:hover{
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
+}
+*/
+.detailpageholder{
+    position: fixed;
+    top: 5vh;
+    left: 1vw;
+}
+
+.detailpage{
+    z-index: 1;
+    background: #ff0000;
+    color: #ffffff;
+    border: 0;
+    border-radius: 5px;
+    padding: 1vw;
+    width: 96vw;
+    height: 90vh;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#show{
+    display: block;
+}
+
+#hide{
+    display: none;
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+    color: #ffffff;
+}
+
+.close:hover{
+    cursor: pointer;
+}
