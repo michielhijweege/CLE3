@@ -139,40 +139,11 @@ function detailSuccesHandler(musea) {
     leesmeerbutton.innerHTML = 'Lees meer'
     leesmeerbutton.classList.add("lees")
     rightcontent.appendChild(leesmeerbutton)
-
-//creat save button
-    let savenbutton = document.createElement("button")
-    savenbutton.innerHTML = 'save ' + musea.name
-    savenbutton.id = musea.name
-    savenbutton.classList.add("save")
-    savenbutton.classList.add("notsaved")
-    rightcontent.appendChild(savenbutton)
 }
+
 //error code
 function ajaxErrorHandler(error){
     console.error(error)
-}
-
-//kijk of hij opgeslagen is en verander icon
-function loadSaves(name) {
-    if (localStorage.getItem("savelist-musea")) {
-        saveitems = JSON.parse(localStorage.getItem("savelist-musea"));
-        for (let i = 0; i < saveitems.length; i++) {
-
-            console.log(saveitems[i])
-
-            /*if()
-
-            let name = saveitems[i].replace("save ", "")
-            let parent = document.getElementById(name)
-            let button = parent.getElementsByTagName('button')[1]
-
-            button.classList.add("saved")
-            button.classList.remove("notsaved")
-            button.innerHTML = button.innerHTML.replace("save", "unsave");
-            }*/
-        }
-    }
 }
 
 //klik function
