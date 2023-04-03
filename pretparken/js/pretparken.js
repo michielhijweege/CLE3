@@ -42,7 +42,7 @@ function createdetailpagina(){
 function parkenSuccesHandler(data){
     for (let pretparken of data) {
         const newpretparkdiv = document.createElement('section')
-        newpretparkdiv.classList.add("content-box")
+        newpretparkdiv.classList.add("content-holder")
         newpretparkdiv.dataset.name = pretparken.name;
         list.appendChild(newpretparkdiv)
 
@@ -60,17 +60,17 @@ function parkenSuccesHandler(data){
 
 //laad en zet de detail data
 function detailSuccesHandler(pretpark){
-    let pretparkCard = document.querySelector(`.content-box[data-name='${pretpark.name}']`);
+    let pretparkCard = document.querySelector(`.content-holder[data-name='${pretpark.name}']`);
     //logo inladen
     let logoimg = document.createElement("img")
     logoimg.src = pretpark.img
     logoimg.alt = pretpark.imgalt
-    logoimg.classList.add("logo-pretpark")
+    logoimg.classList.add("content-vak")
     pretparkCard.appendChild(logoimg)
 
     //create mid content
     let midcontent = document.createElement('section')
-    midcontent.classList.add('midcontent')
+    midcontent.classList.add('content-vak')
     pretparkCard.appendChild(midcontent)
 
     //title inladen
@@ -103,21 +103,31 @@ function detailSuccesHandler(pretpark){
 
     //create right content
     let rightcontent = document.createElement('section')
+    rightcontent.classList.add('content-vak')
     pretparkCard.appendChild(rightcontent)
 
-    //top openings tijden title inladen
+    //openings tijden title inladen
     let openingstijdenh3 = document.createElement("h3")
     openingstijdenh3.innerHTML = 'Openings tijden'
     rightcontent.appendChild(openingstijdenh3);
 
-    //top openings tijden list inladen
-    let openingstijdenlijst = document.createElement("ul")
+    //openings tijden list inladen
+    let openingstijdenlijst = document.createElement("table")
     rightcontent.appendChild(openingstijdenlijst);
 
     //openings tijden inladen
     for (let t = 0; t < 7; t++) {
-        let tijdenlistitem = document.createElement("li")
-        tijdenlistitem.innerHTML = pretpark.openingstijden[t]
+        let tijdenlistitem = document.createElement("tr")
+
+        let dag = document.createElement("td")
+        dag.innerHTML = "<b>" + pretpark.openingsdagen[t] + "</b>"
+
+        let tijd = document.createElement("td")
+        tijd.innerHTML = pretpark.openingstijden[t]
+
+        tijdenlistitem.appendChild(dag)
+        tijdenlistitem.appendChild(tijd)
+
         openingstijdenlijst.appendChild(tijdenlistitem)
     }
 
@@ -169,10 +179,57 @@ function showditail(id){
     closebutton.classList.add("lees")
     detailcontent.appendChild(closebutton)
 
-    //title inladen
-    let title = document.createElement('h2');
-    title.innerHTML = pretparkData[id].name;
-    detailcontent.appendChild(title);
+    //banner inladen
+    let bannerimg = document.createElement("img")
+    bannerimg.src = pretparkData[id].bannerimg
+    bannerimg.alt = pretparkData[id].bannerimgalt
+    bannerimg.classList.add("banner-pretpark")
+    detailcontent.appendChild(bannerimg)
+
+    //create text container
+    let textcontainer  = document.createElement("section")
+    textcontainer.classList.add("textcontainer")
+    detailcontent.appendChild(textcontainer)
+
+    //create top atracties container
+    let toplistcontainer  = document.createElement("section")
+    toplistcontainer.classList.add("topattractiescontainer")
+    textcontainer.appendChild(toplistcontainer)
+
+    //top atracties title inladen
+    let toplisth3 = document.createElement("h3")
+    toplisth3.innerHTML = 'Top atracties'
+    toplistcontainer.appendChild(toplisth3);
+
+    //top atracties list inladen
+    let toplist = document.createElement("ul")
+    toplistcontainer.appendChild(toplist);
+
+    //top atracties inladen
+    for (let t = 0; t < 10; t++) {
+        let toplistitem = document.createElement("li")
+        toplistitem.innerHTML = pretparkData[id].topatracties[t]
+        toplist.appendChild(toplistitem)
+    }
+
+    let infocontainer  = document.createElement("section")
+    textcontainer.appendChild(infocontainer)
+
+    let hondentitle = document.createElement('h3')
+    hondentitle.innerHTML = "Toegankelijk met een hulp- of geleidenhond"
+    infocontainer.appendChild(hondentitle);
+
+    let hondentext = document.createElement('p')
+    hondentext.innerHTML = pretparkData[id].honden
+    infocontainer.appendChild(hondentext);
+
+    let rolstoeltitle = document.createElement('h3')
+    rolstoeltitle.innerHTML = "Toegankelijk met een rolstoel"
+    infocontainer.appendChild(rolstoeltitle);
+
+    let rolstoeltext = document.createElement('p')
+    rolstoeltext.innerHTML = pretparkData[id].rolstoel
+    infocontainer.appendChild(rolstoeltext);
 }
 
 //klik function
