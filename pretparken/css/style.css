@@ -1,5 +1,5 @@
-.logo-pretpark{
-    width:  25vw;
+.content-holder{
+    padding-bottom: 5vw;
 }
 
 .lees{
@@ -82,16 +82,33 @@
     overflow: hidden;
 }
 
-.close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0px;
-    font-size: 40px;
-    background: none;
-    color: #ffffff;
+.banner-pretpark{
+    width: 100%;
+    max-height: 25%;
 }
 
-.close:hover{
-    cursor: pointer;
+.content-vak{
+    float: left;
+    width: 33.33%;
+}
+
+h2{
+    font-size: 2vw;
+}
+
+.content-holder{
+    border-radius:  5px;
+    box-shadow:  2px 2px 5px gray;
+    padding:  20px;
+    margin:  10px;
+    position:  relative;
+}
+
+.textcontainer{
+    display: flex;
+}
+
+.topattractiescontainer{
+    flex-shrink: 0;
+    padding-right: 10%;
 }
