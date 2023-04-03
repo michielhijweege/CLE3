@@ -15,14 +15,10 @@ function getCinema()
         ],
         [
             "id" => 3,
-            "name" => "Dedicon"
-        ],
-        [
-            "id" => 4,
             "name" => "Pathé"
         ],
         [
-            "id" => 5,
+            "id" => 4,
             "name" => "Kinepolis"
         ]
     ];
@@ -49,7 +45,11 @@ function getCinemaDetails($id)
              zoals filmhuis-, kinder-, familie en muziekfilms, drama, komedie, thrillers, Nederlandse films, films uit Engelstalige en niet-Engelstalige landen en af en toe een mooie documentaire.
              In onze filmzaal kunnen bijna 100 bezoekers genieten van films in prachtig beeld en met voortreffelijk geluid.",
 
-            "openingstijden" => [''],
+            "openingstijden" =>
+                ["Woensdagavond 20:00",
+                "Vrijdagavond 20:30",
+                 "Zaterdagavond 20:30",
+                "Zondagdagavond 20:00"],
             "meerInformatieLink" => "https://lingefilm.nl/2019/03/03/blind-of-slechtziend-ook-jij-kan-naar-de-bioscoop/",
             "toegankelijkheid" => "",
             "tags" => ['Audiodiscriptie', 'Earcatch', 'Film', 'Filmtheater']
@@ -60,6 +60,7 @@ function getCinemaDetails($id)
             "name" => "DoK6 Cinema",
             "img" => "img/dok6cinema.png",
             "imgalt" => "Logo LingeFilm",
+            "linktekst" => "https://www.pathe.nl/",
             "locatie" => [''],
             "beschrijving" => "Lorem ipsun",
             "openingstijden" => [''],
@@ -69,27 +70,29 @@ function getCinemaDetails($id)
         ],
         3 => [
             "id" => 3,
-            "name" => "Dedicon",
-            "img" => "img/lingefilm.png",
+            "name" => "Pathé",
+            "img" => "img/pathe.png",
             "imgalt" => "Logo LingeFilm",
-            "recipe" => "Very nice when your grandma prepares this meal",
-            "tags" => ['omnomnom']
+            "linktekst" => "https://www.pathe.nl/",
+            "locatie" => [''],
+            "beschrijving" => "Lorem ipsun",
+            "openingstijden" => [''],
+            "meerInformatieLink" => "https://lingefilm.nl/2019/03/03/blind-of-slechtziend-ook-jij-kan-naar-de-bioscoop/",
+            "toegankelijkheid" => "",
+            "tags" => ['Audiodiscriptie', 'Earcatch']
         ],
         4 => [
             "id" => 4,
-            "name" => "Pathé",
-            "img" => "img/lingefilm.png",
-            "imgalt" => "Logo LingeFilm",
-            "recipe" => "Everytime in the city after midnight",
-            "tags" => ['kapsalon', 'tasty', 'meat']
-        ],
-        5 => [
-            "id" => 5,
             "name" => "Kinepolis",
-            "img" => "img/lingefilm.png",
+            "img" => "img/kinepolis.png",
             "imgalt" => "Logo LingeFilm",
-            "recipe" => "Specialty when on holiday in Spain",
-            "tags" => ['fish']
+            "linktekst" => "https://kinepolis.nl/?main_section=films",
+            "locatie" => [''],
+            "beschrijving" => "Lorem ipsun",
+            "openingstijden" => [''],
+            "meerInformatieLink" => "https://lingefilm.nl/2019/03/03/blind-of-slechtziend-ook-jij-kan-naar-de-bioscoop/",
+            "toegankelijkheid" => "",
+            "tags" => ['Audiodiscriptie', 'Earcatch']
         ],
     ];
 

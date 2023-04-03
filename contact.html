@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Contact</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+<header>
+<div id="menu">
+    <p id="active">Contact</p>
+    <div id="logo"><a class="button" href="index.html">Caecus</a></div>
+    <div id="buttons">
+        <a class="button" href="pretparken/pretparken.html">Pretparken</a>
+        <a class="button" href="bioscopen/bioscopen.html">Bioscopen</a>
+        <a class="button" href="musea/musea.html">Musea</a>
+    </div>
+</div>
+<section id="content"></section>
+</header>
+<main>
+    <h1>Contact</h1>
 
+    <form method="POST">
+        <div class="form-element">
+            <label for="name">Naam</label>
+            <input id="name" type="text" name="name" placeholder="Vul uw naam in">
+        </div>
+
+        <div class="form-element">
+            <label for="city"> Woonplaats </label>
+            <input id="city" type="city" name="city" placeholder="Vul uw woonplaats in">
+        </div>
+
+        <div class="form-element">
+            <label for="date"> Datum </label>
+            <input id="date" type="date" name="date" placeholder=" dd/mm/yyyy">
+        </div>
+
+        <div class="form-element">
+            <label for="email"> E-mail</label>
+            <input id="email" type="email" name="email" placeholder="Vul uw email in">
+        </div>
+
+        <div class="form-element">
+            <label class="label" for="category">Waarom neemt u contact op?</label>
+            <select id="category" name="category">
+                <option value="0">Probleem</option>
+                <option value="1">Vraag</option>
+            </select>
+        </div>
+
+        <div class="form-element">
+            <label for="question"> Uw vraag/probleem </label>
+            <textarea width="" id="question" type="" name="question" placeholder="Vul hier uw vraag in" cols="30" rows="10"> </textarea>
+        </div>
+
+        <div class="form-element">
+            <button type="submit"> Verzend</button>
+        </div>
+    </form>
+
+
+</main>
 </body>
 </html>
