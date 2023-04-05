@@ -68,8 +68,8 @@ function getPretparkDetails($id)
                 "Zondag",
                 "Zaterdag"
             ],
-            "bannerimg" => "img/efteling-logo.jpeg",
-            "bannerimgalt" => "logo efteling",
+            "bannerimg" => "img/efteling-banner.jpeg",
+            "bannerimgalt" => "banner efteling",
             "honden" => "Toegankelijkheid met een hulp- of geleidehond\nHulp- en geleidehonden zijn welkom in de Efteling. Een hulp- of geleidehond moet herkenbaar zijn door een hesje en op de dag van het bezoek worden aangemeld bij de Gastenservice (links bij de hoofdentree van de Efteling). Hulp- of geleidehonden mogen mee in alle winkels en restaurants. Ook kunnen ze mee in onderstaande attracties.\nAls de hond niet meegaat in een attractie, maar erbuiten blijft wachten, moet er een begeleider bij de hond blijven.",
             "rolstoel" => "Toegankelijkheid met een rolstoel\nBijna alle attracties hebben een speciale rolstoelingang. Wanneer je de attractie via de rolstoelingang bezoekt, kom je geen fysieke obstakels (zoals trappen) tegen en kun je buiten de gewone wachtrij wachten. De rolstoelingang geeft geen voorrang of kortere wachttijden. Bij drukte kan er ook bij de rolstoelingang een wachttijd ontstaan."
         ],
@@ -110,8 +110,10 @@ function getPretparkDetails($id)
                 "Zondag",
                 "Zaterdag"
             ],
-            "honden" => "x",
-            "rolstoel" => "x"
+            "bannerimg" => "img/walibi-banner.jpeg",
+            "bannerimgalt" => "banner walibi",
+            "honden" => "Honden worden niet toegelaten op het park. Walibi beschikt niet over kennels waarin je je hond kunt achterlaten. Blindengeleidehonden en honden van mensen met een lichamelijke of geestelijke beperking zijn de enige honden die Walibi wel mogen betreden. Hulphonden moeten duidelijk herkenbaar zijn.",
+            "rolstoel" => "Via de Guest Service kun je een rolstoel lenen, de Guest Service zit na de ingang aan de linkerkant in de Main Street. Rolstoelen kunnen niet worden gereserveerd en zijn beperkt beschikbaar. Tijdens Halloween Fright Nights dagen zijn er geen rolstoelen beschikbaar."
         ],
         3 => [
             "id" => 3,
@@ -121,16 +123,16 @@ function getPretparkDetails($id)
             "linktext" => "toverland.com",
             "link" => "https://www.toverland.com/",
             "topatracties" => [
-                "1. x",
-                "2. x",
-                "3. x",
-                "4. x",
-                "5. x",
-                "6. x",
-                "7. x",
-                "8. x",
-                "9. x",
-                "10. x"
+                "1. Exploria Magica",
+                "2. Wirbelbaum",
+                "3. Fenix",
+                "4. Maximus Wunderball",
+                "5. Expedition Zork",
+                "6. Scorpios",
+                "7. Maximus Blitz Bahn",
+                "8. Theekopjes",
+                "9. Merlin's Quest",
+                "10. Troy"
             ],
             "openingstijden" => [
                 "10:00 tot 18:00",
@@ -150,8 +152,10 @@ function getPretparkDetails($id)
                 "Zondag",
                 "Zaterdag"
             ],
-            "honden" => "X",
-            "rolstoel" => "X"
+            "bannerimg" => "img/toverland-banner.jpeg",
+            "bannerimgalt" => "banner toverland",
+            "honden" => "Het bezoeken van Toverland met blindengeleide- of hulphonden is wel mogelijk.",
+            "rolstoel" => "Er zijn speciale rolstoel wegen en je kan de wc's gewoongebruiken"
         ],
         4 => [
             "id" => 4,
@@ -161,16 +165,16 @@ function getPretparkDetails($id)
             "linktext" => "slagharen.com",
             "link" => "https://slagharen.com",
             "topatracties" => [
-                "1. x",
-                "2. x",
-                "3. x",
-                "4. x",
-                "5. x",
-                "6. x",
-                "7. x",
-                "8. x",
-                "9. x",
-                "10. x"
+                "1. Ripsaw Falls",
+                "2. Mine Train",
+                "3. The Eagle",
+                "4. The Pirate",
+                "5. Tomahawk",
+                "6. El Torito",
+                "7. Red Bandits Adventure",
+                "8. Big Wheel",
+                "9. Cable Car",
+                "10. El Teatro"
             ],
             "openingstijden" => [
                 "10:00 tot 17:00",
@@ -190,8 +194,10 @@ function getPretparkDetails($id)
                 "Zondag",
                 "Zaterdag"
             ],
-            "honden" => "X",
-            "rolstoel" => "X"
+            "bannerimg" => "img/slagharen-banner.jpeg",
+            "bannerimgalt" => "banner slagharen",
+            "honden" => "Honden zijn van harte welkom in Attractie- & Vakantiepark Slagharen, maar niet in de attracties, shows, restaurants en winkels. Honden moeten altijd aangelijnd zijn en voor een dagbezoek is geen toeslag nodig. Hulphonden zijn ook van harte welkom mits zij herkenbaar zijn door een hesje. Hulp- of geleidehonden mogen mee in de restaurants en winkels. ",
+            "rolstoel" => "Bijna alle attracties zijn op een bepaalde manier (deels) toegankelijk voor mindervaliden. Helaas zijn er enkele attracties wat moeilijker te bereiken, maar in overleg met onze attractiemedewerkers is er veel mogelijk. De meeste attracties zijn voor rolstoelgebruikers toegankelijk via de uitgang. De attractiemedewerker kan je eventueel begeleiden en assisteren. De parkshows zijn goed bereikbaar voor mindervaliden. Vraag bij de Guest Service naar de folder met een overzicht van alle attracties en hun toegankelijkheid."
         ],
     ];
 

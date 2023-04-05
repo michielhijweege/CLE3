@@ -60,3 +60,14 @@ li{
     justify-content:  space-around;
     position:  relative;
 }
+
+.drieimgs{
+    float: left;
+    width: 33.33%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+.text{
+    text-align: center;
+}

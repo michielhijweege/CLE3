@@ -25,7 +25,7 @@ function init()
     createdetailpagina()
 }
 
-//create detail pagina
+//create detail popup pagina
 function createdetailpagina(){
     const detailpageholder = document.createElement('section')
     detailpageholder.classList.add('detailpageholder')
@@ -38,7 +38,7 @@ function createdetailpagina(){
     detailpage.addEventListener('click', ItemWasClicked)
 }
 
-//create een section
+//create een section waar de detail in word geladen
 function parkenSuccesHandler(data){
     for (let pretparken of data) {
         const newpretparkdiv = document.createElement('section')
@@ -58,7 +58,7 @@ function parkenSuccesHandler(data){
     }
 }
 
-//laad en zet de detail data
+//zet de detail van pretparken in de section
 function detailSuccesHandler(pretpark){
     let pretparkCard = document.querySelector(`.content-holder[data-name='${pretpark.name}']`);
     //logo inladen
@@ -146,12 +146,13 @@ function detailSuccesHandler(pretpark){
     savenbutton.classList.add("notsaved")
     rightcontent.appendChild(savenbutton)
 
+    //save het pretpark info in pretparkData
     pretparkData[pretpark.id] = pretpark
 
     loadSaves(pretpark.name)
 }
 
-//kijk of hij opgeslagen is en verander icon
+//kijk of het pretpark is opgeslagen
 function loadSaves(pretparkname) {
     if(localStorage.getItem("savelist")){
         saveitems = JSON.parse(localStorage.getItem("savelist"));
@@ -166,7 +167,7 @@ function loadSaves(pretparkname) {
     }
 }
 
-//detail pagina
+//laad de data in detail pagina
 function showditail(id){
     //find detailcontent
     const  detailcontent = document.getElementsByClassName('detailpage')[0]
@@ -179,7 +180,7 @@ function showditail(id){
     closebutton.classList.add("lees")
     detailcontent.appendChild(closebutton)
 
-    //banner inladen
+    //ingeladen banner neerzetten
     let bannerimg = document.createElement("img")
     bannerimg.src = pretparkData[id].bannerimg
     bannerimg.alt = pretparkData[id].bannerimgalt
@@ -196,37 +197,42 @@ function showditail(id){
     toplistcontainer.classList.add("topattractiescontainer")
     textcontainer.appendChild(toplistcontainer)
 
-    //top atracties title inladen
+    //create title voor top lijst
     let toplisth3 = document.createElement("h3")
     toplisth3.innerHTML = 'Top atracties'
     toplistcontainer.appendChild(toplisth3);
 
-    //top atracties list inladen
+    //create ul item
     let toplist = document.createElement("ul")
     toplistcontainer.appendChild(toplist);
 
-    //top atracties inladen
+    //ingeladen top atracties neerzetten
     for (let t = 0; t < 10; t++) {
         let toplistitem = document.createElement("li")
         toplistitem.innerHTML = pretparkData[id].topatracties[t]
         toplist.appendChild(toplistitem)
     }
 
+    //create een container voor de info
     let infocontainer  = document.createElement("section")
     textcontainer.appendChild(infocontainer)
 
+    //create een title voor honden
     let hondentitle = document.createElement('h3')
     hondentitle.innerHTML = "Toegankelijk met een hulp- of geleidenhond"
     infocontainer.appendChild(hondentitle);
 
+    //ingeladen info over honden neerzetten
     let hondentext = document.createElement('p')
     hondentext.innerHTML = pretparkData[id].honden
     infocontainer.appendChild(hondentext);
 
+    //create een title voor rolstoelen
     let rolstoeltitle = document.createElement('h3')
     rolstoeltitle.innerHTML = "Toegankelijk met een rolstoel"
     infocontainer.appendChild(rolstoeltitle);
 
+    //ingeladen info over rolstoelen neerzetten
     let rolstoeltext = document.createElement('p')
     rolstoeltext.innerHTML = pretparkData[id].rolstoel
     infocontainer.appendChild(rolstoeltext);
