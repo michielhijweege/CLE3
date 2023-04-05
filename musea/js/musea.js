@@ -266,16 +266,43 @@ function detailSuccesHandler(musea) {
 
         openingstijdenlijst.appendChild(tijdenlistitem)
     }
-
 //creat lees button
-    let leesmeerbutton = document.createElement("button")
-    leesmeerbutton.innerHTML = 'Lees meer'
-    leesmeerbutton.classList.add("lees")
-    leesmeerbutton.dataset.id = musea.id;
-    rightcontent.appendChild(leesmeerbutton)
+        let leesmeerbutton = document.createElement("button")
+        leesmeerbutton.innerHTML = 'Lees meer'
+        leesmeerbutton.classList.add("lees")
+        leesmeerbutton.dataset.id = musea.id;
+        rightcontent.appendChild(leesmeerbutton)
 
-    museadetails[musea.id] = musea
-    console.log(musea)
+        museadetails[musea.id] = musea
+        console.log(musea)
+
+//creat save button
+        let savenbutton = document.createElement("button")
+        savenbutton.innerHTML = 'save ' + musea.name
+        savenbutton.id = musea.name
+        savenbutton.classList.add("save")
+        savenbutton.classList.add("notsaved")
+        rightcontent.appendChild(savenbutton)
+
+//save het musea info in museadetails
+        museadetails[musea.id] = musea
+
+        loadSaves(musea.name)
+}
+
+//kijk of het musea is opgeslagen
+function loadSaves(museaname) {
+    if(localStorage.getItem("savelist")){
+        saveitems = JSON.parse(localStorage.getItem("savelist-musea"));
+        for (let i = 0; i < saveitems.length; i++){
+            if(saveitems[i] === "save " + museaname){
+                let button = document.getElementById(museaname)
+                button.classList.add("saved")
+                button.classList.remove("notsaved")
+                button.innerHTML = button.innerHTML.replace("save", "unsave");
+            }
+        }
+    }
 }
 
 //error code

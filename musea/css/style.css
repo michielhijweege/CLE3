@@ -36,6 +36,39 @@
     width: 4vw;
 }
 
+.save{
+    text-indent:  -9999px;
+    margin-right: 1vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    height: 8vh;
+    width: 4vw;
+}
+
+.saved{
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
+}
+
+.notsaved{
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
+}
+
+.saved:hover{
+    background:  url("../img/bookmark-empty.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
+}
+
+.notsaved:hover{
+    background:  url("../img/bookmark-full.png") no-repeat;
+    background-size:  contain;
+    cursor:  pointer;
+}
+
 .detailpageholder{
     position: fixed;
     top: 5vh;
