@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-const apiUrl = 'http://localhost/CLE3/pretparken';
+const apiUrl = 'https://michielhijweege.github.io/CLE3/pretparken/pretparken.html';
 let section;
 let list;
 let saveitems = [];

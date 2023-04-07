@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-const apiUrl = 'http://localhost/CLE3/musea';
+const apiUrl = 'https://michielhijweege.github.io/CLE3/musea/musea.html';
 let section;
 let list;
 let saveitems = [];
